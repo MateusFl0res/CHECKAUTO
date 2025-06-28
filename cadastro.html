@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head>
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <title>Cadastro - CHECKAUTO</title> 
+  <link rel="stylesheet" href="style.css" type="text/css" /> 
+</head>
+
+<body>
+  
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+      <img src="PNG/LOGO.png" alt="logo CHECKAUTO">
+      </div>
+      <a href="index.html">CHECKAUTO</a> 
+      <a href="quemsomos.html">QUEM SOMOS ?</a> 
+      <a href="contato.html">CONTATO</a>
+    </nav>
+  </header>
+
+  
+  <section class="hero">
+    <h2>Cadastro</h2> 
+
+    <form action="#" method="post" class="formulario">
+       
+      <input type="text" name="nome" placeholder="Nome do proprietário" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="text" name="cpf" placeholder="CPF" required>
+      <input type="tel" name="telefone" placeholder="Telefone">
+      <input type="password" name="senha" placeholder="Senha" required>
+      <input type="password" name="repitasenha" placeholder="Repita a senha" required>
+
+      
+      <input type="text" name="marca" placeholder="Marca do veículo" required>
+      <input type="text" name="modelo" placeholder="Modelo do veículo" required>
+      <input type="text" name="ano" placeholder="Ano de fabricação" required>
+      <input type="text" name="placa" placeholder="Placa do veículo">
+      <input type="text" name="cor" placeholder="Cor do veículo">
+      <input type="number" name="km" placeholder="Quilometragem">
+      <textarea name="obs" placeholder="Observações adicionais" rows="4"></textarea>
+      <label for="carro" style="color: rgb(0, 0, 0); text-align: center;">Adicione imagem do veiculo para verificação com I.A
+      
+      </label>
+      <label for="image" class="upload" ></label>
+      <div style="color: black;">
+      
+      <div style="color: black;"><strong>Frente:</strong></div>
+      <input type="file" name="imagem_frente" accept="image/*">
+      
+      <div style="color: black;"><strong>Lateral Direita:</strong></div>
+      <input type="file" name="imagem_direita" accept="image/*">
+
+      <div style="color: black;"><strong>Lateral Esquerda:</strong></div>
+      <input type="file" name="imagem_esquerda" accept="image/*">
+
+      <div style="color: black;"><strong>Traseira:</strong></div>
+      <input type="file" name="imagem_traseira" accept="image/*">
+
+      <div style="color: black;"><strong>Teto:</strong></div>
+      <input type="file" name="imagem_teto" accept="image/*">
+    
+      <div>
+      <button type="submit">Cadastrar</button>
+      </div>
+
+    </form>
+
+  
+  </section>
+
+  <footer>
+    <p>© 2025 CHECKAUTO</p>
+  </footer>
+</body>
+</html>
