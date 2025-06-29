@@ -2,99 +2,139 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background-image: url('PNG/fundo.png'); 
+  background-image: url('PNG/fundo.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
-  margin: 0;
-  padding: 0;
-  display:flex;
+  min-height: 100%;
+  display: flex;
   flex-direction: column;
   overflow: auto;
-  background-attachment: fixed;
-  min-height: 100%;
 }
 
 .navbar {
-  display: flex; 
-  justify-content: space-between; 
-  background-color:rgba(72, 71, 71, 0.682); 
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(72, 71, 71, 0.682);
   backdrop-filter: blur(4px);
-  padding: 1rem 2rem; 
+  padding: 1rem 2rem;
   align-items: center;
-  position: fixed; 
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
 }
 
-.logo img{
+.logo img {
   height: 50px;
   width: auto;
 }
 
 .navbar a {
-  color: white; 
+  color: white;
   text-decoration: none;
-  font-weight: bold; 
+  font-weight: bold;
+}
+
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(72, 71, 71, 0.682);
+  backdrop-filter: blur(5px);
+  color: white;
 }
 
 .hero {
   padding: 1rem;
   flex: 1;
-  text-align: center; 
-  color: rgb(255, 255, 255); 
-  display: flex; 
+  text-align: center;
+  color: white;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 80px;
 }
 
-.hero h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: white;
-} 
-
+.hero h2,
 .titulo-inicio {
-  font-size: 2.5rem;    
-  text-align: center;
   margin-bottom: 1rem;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
-select, button {
+select,
+button {
   width: 100%;
   max-width: 700px;
   font-size: 1rem;
   padding: .75rem 1rem;
-  background-color: rgba(72, 71, 71, 0.682); 
-  color: rgb(255, 255, 255);
+  background-color: rgba(72, 71, 71, 0.682);
+  color: white;
   font-weight: bold;
-  backdrop-filter: blur(4px); 
-  -webkit-backdrop-filter: blur(4px); 
+  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 6px;
   transition: background-color 0.3s ease;
 }
 
-.form-container {
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 1rem; 
-  padding: 2.5rem; 
-  border-radius: 10px; 
-  max-width: 100%; 
-  margin: 2rem auto; 
+.botãoavancar button {
+  width: 200px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
 }
 
-.formulario{
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+  background-color: transparent;
+}
+
+.carrossel {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: scrollCarrossel 60s linear infinite;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 350px;
+  height: 350px;
+  margin: 1rem;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@keyframes scrollCarrossel {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.formulario {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -105,10 +145,11 @@ select, button {
   border-radius: 10px;
   color: #000;
   margin: 1rem auto 2rem;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.formulario input,.formulario textarea {
+.formulario input,
+.formulario textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -123,97 +164,26 @@ select, button {
   color: #000;
 }
 
-.botãoavancar button,
 .formulario button {
-  width: 200px;              
-  padding: 1rem;             
-  font-size: 1.2rem;         
-  border-radius: 10px;       
-  background-color: rgba(72, 71, 71, 0.682); 
+  width: 200px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: rgba(72, 71, 71, 0.682);
   color: white;
   font-weight: bold;
   border: none;
-  transition: background-color 0.3s ease
-}
-
-.form-container select,
-.form-container button,
-.form-container input {
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: none;
-}
-
-main{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-
-.container{
-  width: 100%;
-  overflow: hidden;
-  padding: 1rem 0;
-  background-color: transparent;
-  padding: 1rem 0;
-}
-
-.carrossel{
-  display: flex;
-  width: max-content;
-  gap: 1rem;
-  animation:scrollCarrossel 60s linear infinite;
-}
-
-.item{
- flex: 0 0 auto;
- width: 350px;
- height: 350px;
-  margin: 1rem;
-}
-
-.item img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-@keyframes scrollCarrossel {
-  from{
-    transform: translateX(0);
-  }
-  to{
-    transform: translateX(-50%);
-  }
-}
-
-.gallery img {
- width: 500px;
-  border-radius: 10px; 
-  padding-bottom: 10px;
-  cursor: default;
-}
-
-footer {
-  flex: 0 0 auto;
-  text-align: center;
-  width: 100%;
-  padding: 15px;
-  background-color:rgba(72, 71, 71, 0.682); 
-  backdrop-filter: blur(5px); 
-  color: white;
+  transition: background-color 0.3s ease;
 }
 
 .quem-somos {
-  color: #ffffff;
+  color: white;
   padding: 5rem 1rem;
 }
 
 .quem-somos .container {
   max-width: 1200px;
-  margin: auto ;
+  margin: auto;
   background-color: rgba(30, 30, 30, 0.85);
   padding: 5rem;
   border-radius: 12px;
@@ -241,9 +211,10 @@ footer {
   font-size: 1.3rem;
 }
 
-.quem-somos p {
+.quem-somos p,
+.quem-somos ul li {
+  font-size: 0.95rem;
   line-height: 1.6;
-  font-size: 1rem;
 }
 
 .quem-somos ul {
@@ -251,96 +222,26 @@ footer {
   list-style: disc;
 }
 
-.quem-somos ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-.quem-somos p,
-.quem-somos ul li {
-  font-size: 0.95rem;
-}
-
-@media (max-width: 600px) {
-.quem-somos h2 {
-  font-size: 1.4rem;
-  padding: 1rem;
-}
-}
-
-@media (max-width: 768px) {
-.navbar {
-  flex-direction: column;
-  gap: 10px;
-  padding: 1rem 0.5rem;
-}
-
-.titulo-inicio {
-  font-size: 1.5rem;
-}
-
-.hero h2 {
-  font-size: 1.5rem;
-  padding: 0 50px;
-  margin-top: 6rem;
-}
-
-select, button {
-  width: 90%;       
-  padding: 1rem;
-  font-size: 1rem;
-}
-
-.formulario {
-  width: 90%;
-  padding: 1.5;
-}
-
 .form-container {
-  width: 90%;
-  padding: 2.5rem; 
-  }
-
-.formulario input,
-.formulario textarea {
-  font-size: 1rem;
-}
-
-.formulario button,
-.botãoavancar button {
-  width: 100%;
-  font-size: 1rem;
-  padding: 1rem;
-}
-
-.gallery {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
+  padding: 2.5rem;
+  border-radius: 10px;
+  max-width: 100%;
+  margin: 2rem auto;
 }
 
-.gallery img {
-  width: 90%;
-}
-
-.quemsomos {
-  width: 90%;
-  font-size: 1rem;
-  padding: 15px;
-}
-}
-
-@media (min-width: 900px) {
-  
-.quem-somos .container {
-  grid-template-columns: repeat(3, 1fr);
-}
-}
-
-@media (max-width: 899px) {
-.quem-somos .container {
-  grid-template-columns: 1fr;
-}
+.form-container input,
+.form-container button,
+.form-container select {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  max-width: 500px;
 }
 
 .whatsapp-contato {
@@ -370,4 +271,56 @@ select, button {
 .whatsapp-icon {
   width: 24px;
   height: 24px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem 0.5rem;
+  }
+
+  .titulo-inicio,
+  .hero h2 {
+    font-size: 1.5rem;
+    padding: 0 50px;
+    margin-top: 6rem;
+  }
+
+  select,
+  button,
+  .formulario,
+  .form-container {
+    width: 90%;
+  }
+
+  .formulario input,
+  .formulario textarea,
+  .formulario button,
+  .botãoavancar button {
+    font-size: 1rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .quem-somos h2 {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  .gallery img {
+    width: 90%;
+  }
+}
+
+@media (min-width: 900px) {
+  .quem-somos .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 899px) {
+  .quem-somos .container {
+    grid-template-columns: 1fr;
+  }
 }
